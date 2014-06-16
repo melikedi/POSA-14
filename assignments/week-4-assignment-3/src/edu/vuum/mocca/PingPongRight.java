@@ -15,7 +15,7 @@ public class PingPongRight {
     /**
      * Number of iterations to run the test program.
      */
-	  public final static int mMaxIterations = 20;
+	  public final static int mMaxIterations = 10;
 
     /**
      * Latch that will be decremented each time a thread exits.
