@@ -127,6 +127,7 @@ public class DownloadService extends Service
         // DownloadService can send back the pathname.
         intent.putExtra("MESSENGER",
                         new Messenger(downloadHandler));
+     
         return intent;
     }
 
