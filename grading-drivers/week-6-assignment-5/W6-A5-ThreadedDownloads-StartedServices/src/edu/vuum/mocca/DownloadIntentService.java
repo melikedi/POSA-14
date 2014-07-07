@@ -62,8 +62,10 @@ public class DownloadIntentService extends IntentService {
     	// TODO - You fill in here to replace null with a call to the
     	// factory method in DownloadUtils that makes a Messenger
     	// Intent with the appropriate parameters.
+    	Intent intent = DownloadUtils.makeMessengerIntent(context,DownloadIntentService.class,handler,uri);
+    	
 
-        return null;
+        return intent;
     }
 
     /**
@@ -86,5 +88,9 @@ public class DownloadIntentService extends IntentService {
         // method from the DownloadUtils class that downloads the uri
         // in the intent and returns the file's pathname using a
         // Messenger who's Bundle key is defined by DownloadUtils.MESSENGER_KEY
+    	///String url = getUrlString();
+    	Messenger messenger = (Messenger) intent.getExtras().get("MESSENGER");
+    	DownloadUtils.downloadAndRespond(getApplicationContext(), intent.getData(), messenger);
+    	
     }
 }
